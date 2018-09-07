@@ -25,7 +25,7 @@ import java.util.Map;
  * The latter functionallity enables you to see reports on the methods, and classes that are never beeing used.
  *
  * Reduce noice:
- * Specify your package structure by adding the base.package parameter. This will enable the agent to only monitor, and
+ * Specify your package structure by adding the base_package parameter. This will enable the agent to only monitor, and
  * report on the crucial piece of information: Your code!
  *
  * Prefix:
@@ -88,7 +88,7 @@ public class MonitorAgent {
         }
 
         // define the class transformer to use
-        instrumentation.addTransformer(new TimedClassTransformer(basePackage));
+        instrumentation.addTransformer(new TimedAndActivityClassTransformer(basePackage));
 
         log.info("starting StatsdObservatioDistributer");
         TemporaryStaticClient.getInstance(prefix, reporterHost, reporterPort);

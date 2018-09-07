@@ -2,11 +2,6 @@ package org.valuereporter.agent.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.valuereporter.activity.ObservedActivity;
-import org.valuereporter.agent.MonitorAgent;
-import org.valuereporter.client.MonitorReporter;
-import org.valuereporter.client.MonitorRepository;
-import org.valuereporter.client.activity.ActivityRepository;
 
 import com.timgroup.statsd.NonBlockingStatsDClient;
 import com.timgroup.statsd.StatsDClient;
