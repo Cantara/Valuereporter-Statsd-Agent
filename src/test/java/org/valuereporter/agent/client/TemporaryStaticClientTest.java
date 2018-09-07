@@ -1,6 +1,9 @@
 package org.valuereporter.agent.client;
 
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.testng.Assert.*;
 
 import org.slf4j.Logger;
@@ -50,6 +53,11 @@ public class TemporaryStaticClientTest {
 
 	@Test
 	public void testReportTime() {
+		staticClient = TemporaryStaticClient.getInstance();
+		staticClient.setStatsd(statsd);
+		assertTrue(staticClient.getStatsd().getClass().getName().contains("Mockito"));
+		staticClient.reportTime("test", 3, 4);
+		verify(statsd).recordExecutionTime(eq("test"), eq(1L));
 	}
 
 	@Test
