@@ -44,6 +44,7 @@ public class TemporaryStaticClientTest {
 	public void testGetInstanceWithParams() {
 		staticClient = TemporaryStaticClient.getInstance(MonitorAgent.DEFAULT_REPORTER_PREFIX, MonitorAgent.DEFAULT_REPORTER_HOST, MonitorAgent.DEFAULT_REPORTER_PORT);
 		assertNotNull(staticClient.getStatsd());
+		assertFalse(staticClient.getStatsd().getClass().getName().contains("Mockito"));
 	}
 	@Test
 	public void testGetInstance() {
@@ -62,9 +63,12 @@ public class TemporaryStaticClientTest {
 
 	@Test
 	public void testReportActivity() {
+		staticClient = TemporaryStaticClient.getInstance();
+		staticClient.setStatsd(statsd);
+		assertTrue(staticClient.getStatsd().getClass().getName().contains("Mockito"));
+		staticClient.reportActivity("test");
+		verify(statsd).incrementCounter(eq("test"));
 	}
 
-	@Test
-	public void testGetStatsd() {
-	}
+
 }
