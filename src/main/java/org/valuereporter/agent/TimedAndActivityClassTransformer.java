@@ -66,7 +66,7 @@ public class TimedAndActivityClassTransformer implements ClassFileTransformer {
                     //log.debug("Instrumenting method {}", method.getLongName());
                     method.addLocalVariable("__metricStartTime", CtClass.longType);
                     method.insertBefore("__metricStartTime = System.currentTimeMillis();");
-                    String metricName = ctClass.getName().replace(".", "_") + "__" + method.getName();
+                    String metricName = ctClass.getName().replace(".", "_") + "." + method.getName();
                     log.debug("Created metricName: {}", metricName);
                     method.insertAfter("org.valuereporter.agent.client.TemporaryStaticClient.reportTime(\"" + metricName + "\", __metricStartTime, System.currentTimeMillis());");
                     method.insertAfter("org.valuereporter.agent.client.TemporaryStaticClient.reportActivity(\"" + metricName + "\");");
