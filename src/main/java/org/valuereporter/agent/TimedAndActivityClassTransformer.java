@@ -48,13 +48,11 @@ public class TimedAndActivityClassTransformer implements ClassFileTransformer {
         try {
             CtClass ctClass = classPool.get(className);
             if (ctClass.isFrozen()) {
-               // log.debug("Skip class {}: is frozen", className);
                 return null;
             }
 
             if (ctClass.isPrimitive() || ctClass.isArray() || ctClass.isAnnotation()
                     || ctClass.isEnum() || ctClass.isInterface()) {
-                //log.debug("Skip class {}: not a class", className);
                 return null;
             }
 
