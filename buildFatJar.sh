@@ -1,2 +1,2 @@
 #!/bin/sh
-./gradlew clean fatJar
+mvn clean package

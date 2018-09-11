@@ -9,6 +9,22 @@ Valuereporter-Statsd-Agent
 This agent will monitor all calls to public methods. When a method is called, start-time and end-time will be forwarded
 to the Valuereporter service.
 
+Docker
+===================
+```
+FROM cantara/valuereporter-statsd-agent
+#$agent_jar_path is inherited from the baseimage at cantara/valuereporter-statsd-agent
+#$prefix is used by Grafana to separate your data from the other services.
+#$statsd_host hostname to StatsD service -assuming standard port for now
+#$base_package the java package structure you want to monitor eg. no.cantara.demo
+
+ENV prefix=NEED-TOBE-SET
+ENV statsd_host=NEED-TOBE-SET
+ENV base_package=NEED-TOBE-SET
+ENV java_agent=-javaagent:$agent_jar_path=base_package:$base_package,statsd_host:$statsd_host,prefix:$prefix
+CMD java  $java_agent -jar <your-service.jar>
+```
+
 Installation
 ===================
 
