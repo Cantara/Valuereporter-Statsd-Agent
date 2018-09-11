@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t baardl/piip .
+docker build -t baardl/valuereporter-statsd-agent .

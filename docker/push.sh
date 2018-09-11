@@ -1,2 +1,2 @@
 #!/bin/sh
-docker push -t <your docker user>/piip
+docker push -t cantara/valuereporter-statsd-agent

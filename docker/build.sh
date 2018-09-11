@@ -5,8 +5,8 @@ BASEDIR=$(pwd)
 #IMAGE_TAG=$(git rev-parse HEAD)
 IMAGE_TAG=latest
 #IMAGE_NAME=cantara/valuereporter-statsd-agent
-IMAGE_NAME=piip
-IMAGE_TITLE="Authenticated access PRF."
+IMAGE_NAME=valuereporter-statsd-agent
+IMAGE_TITLE="Baseimage with JDK 11 and Statsd agent."
 
 echo "Building Docker image $IMAGE_TITLE ($IMAGE_ID) from $BASEDIR."
 

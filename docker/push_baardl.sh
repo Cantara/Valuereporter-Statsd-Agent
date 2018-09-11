@@ -1,2 +1,2 @@
 #!/bin/sh
-docker push baardl/piip
+docker push baardl/valuereporter-statsd-agent

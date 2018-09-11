@@ -1,2 +1,2 @@
 #!/bin/sh
-docker exec -it piip bash
+docker exec -it valuereporter-statsd-agent bash
