@@ -3,7 +3,7 @@
 
   <groupId>org.valuereporter</groupId>
   <artifactId>valuereporter-statsd-agent</artifactId>
-  <version>0.23.2</version>
+  <version>0.23.3-SNAPSHOT</version>
   <packaging>jar</packaging>
     <description>javaagent monitoring activities in your application. This information is forwarded to Statsd via udp.</description>
     
@@ -32,7 +32,7 @@
         <developerConnection>scm:git:ssh://git@github.com/cantara/Valuereporter-Statsd-Agent.git</developerConnection>
         <connection>scm:git:https://github.com/cantara/Valuereporter-Statsd-Agent.git</connection>
         <url>https://github.com/cantara/Valuereporter-Statsd-Agent</url>
-      <tag>valuereporter-statsd-agent-0.23.2</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <repositories>
