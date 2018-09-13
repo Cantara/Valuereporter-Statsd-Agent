@@ -13,16 +13,16 @@ Docker
 ===================
 ```
 FROM cantara/valuereporter-statsd-agent
-#$agent_jar_path is inherited from the baseimage at cantara/valuereporter-statsd-agent
-#$prefix is used by Grafana to separate your data from the other services.
-#$statsd_host hostname to StatsD service -assuming standard port for now
-#$base_package the java package structure you want to monitor eg. no.cantara.demo
+#$AGENT_JAR_PATH is inherited from the baseimage at cantara/valuereporter-statsd-agent
+#$PREFIX is used by Grafana to separate your data from the other services.
+#$STATSD_HOST hostname to StatsD service -assuming standard port for now
+#$BASE_PACKAGE the java package structure you want to monitor eg. no.cantara.demo
 
-ENV prefix=NEED-TOBE-SET
-ENV statsd_host=NEED-TOBE-SET
-ENV base_package=NEED-TOBE-SET
-ENV java_agent=-javaagent:$agent_jar_path=base_package:$base_package,statsd_host:$statsd_host,prefix:$prefix
-CMD java  $java_agent -jar <your-service.jar>
+ENV PREFIX=NEED-TOBE-SET
+ENV STATSD_HOST=NEED-TOBE-SET
+ENV BASE_PACKAGE=NEED-TOBE-SET
+ENV JAVA_AGENT=-javaagent:$AGENT_JAR_PATH=base_package:$BASE_PACKAGE,statsd_host:$STATSD_HOST,prefix:$PREFIX
+CMD java $JAVA_AGENT -jar <your-service.jar>
 ```
 
 Installation

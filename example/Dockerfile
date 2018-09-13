@@ -1,4 +1,4 @@
-FROM baardl/valuereporter-statsd-agent
+FROM valuereporter-statsd-agent
 MAINTAINER Bard Lind <bard.lind@gmail.com>
 
 #ENV agent_jar_name=valuereporter-statsd-agent.jar
@@ -11,6 +11,6 @@ MAINTAINER Bard Lind <bard.lind@gmail.com>
 #ENV java_agent=-javaagent:./$agent_jar_name=base_package:$base_package,statsd_host:$statsd_host,prefix:$prefix
 #CMD java  $java_agent -jar <your-service.jar>
 #CMD "echo Agent jar: $agent_jar_name"
-ENTRYPOINT echo "Print env inherited from cantara/valuereporter-statsd-agent: agent_jar_path, $agent_jar_path"
+ENTRYPOINT echo "Print env inherited from cantara/valuereporter-statsd-agent: AGENT_JAR_PATH: $AGENT_JAR_PATH"
 #docker run -it <image>
 

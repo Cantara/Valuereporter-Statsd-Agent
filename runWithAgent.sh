@@ -1,8 +1,8 @@
 #!/bin/sh
 ./update_service.sh
-agent_jar_name=valuereporter-statsd-agent.jar
-prefix=NEED-TOBE-SET-GRAPHANA/GRAPHITE-style
-statsd_host=NEED-TOBE-SET
-base_package=NEED-TOBE-SET
-java_agent=-javaagent:./$agent_jar_name=base_package:$base_package,statsd_host:$statsd_host,prefix:$prefix
-java $java_agent -jar build/libs/<your-service>.jar
+AGENT_JAR_NAME=valuereporter-statsd-agent.jar
+PREFIX=NEED-TOBE-SET-GRAPHANA/GRAPHITE-style
+STATSD_HOST=NEED-TOBE-SET
+BASE_PACKAGE=NEED-TOBE-SET
+JAVA_AGENT=-javaagent:./$AGENT_JAR_NAME=base_package:$BASE_PACKAGE,statsd_host:$STATSD_HOST,prefix:$PREFIX
+java $JAVA_AGENT -jar build/libs/<your-service>.jar
