@@ -77,7 +77,7 @@ Use class CommandActivitySenderTest
 
 Installation included in your service
 ===================
-
+TODO
 #### In your main class:
 ```
  //Start Valuereporter event distributer.
@@ -96,15 +96,12 @@ Installation included in your service
 ```
 
 #### Report usage
-
+TODO
 ```
 // Report to Valuereporter
 ObservedActivity observedActivity = new ObservedActivity(activityName, System.currentTimeMillis());
 MonitorReporter.reportActivity(observedActivity);
 ```
 
-### Migrate to 1.0
-
-* serviceName -> serviceName : More consistent naming.
 
 
