@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-slim
+FROM openjdk:11.0.16-jre-slim
 MAINTAINER Bard Lind <bard.lind@gmail.com>
 
 ENV AGENT_JAR_NAME=valuereporter-statsd-agent.jar
